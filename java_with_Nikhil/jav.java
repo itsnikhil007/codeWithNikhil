@@ -1,6 +1,6 @@
 import java.util.*;
 
-// public class JavaCourse {
+// public class JavaCourse { //tab completion
 //     public static void main(String args[]) {
 //         System.out.print("Hello World :)");
 //     }
@@ -4464,8 +4464,8 @@ import java.util.*;
 //         for(int i=0; i<arr.length; i++){
 //             int height = arr[i];
 //             int width = nsr[i] - nsl[i] - 1;
-//             int currArea = height * width;
-//             maxArea = Math.max(currArea, maxArea);
+//             int curreara = height * width;
+//             maxArea = Math.max(curreara, maxArea);
 //         }
 //         System.out.print("Max area in histogram is : "+ maxArea);
 //     }
@@ -4620,3 +4620,3255 @@ import java.util.*;
 //         System.out.print(decodeAString(str));
 //     }
 // }
+
+// public class jav{
+//     public static int TrappingRainWater(int arr[]){
+//         int lMax[] = new int[arr.length];
+
+//         int lMaxValue = arr[0];
+//         lMax[0] = arr[0];
+
+//         for(int i=1; i<arr.length; i++){
+//             lMaxValue = Math.max(arr[i], lMaxValue);
+//             lMax[i] = lMaxValue;
+//         }
+
+//         int rMax[] = new int[arr.length];
+//         int rMaxValue = arr[arr.length-1];
+//         rMax[arr.length-1] = arr[arr.length-1];
+
+//         for(int i=arr.length-2; i>=0; i--){
+//             rMaxValue = Math.max(arr[i], rMaxValue);
+//             rMax[i] = rMaxValue;
+//         }
+
+//         int sumWater = 0;
+//         for(int i=0; i<arr.length; i++){
+//             int water = Math.min(lMax[i], rMax[i]) - arr[i];
+//             sumWater += water;
+//         }
+//         return sumWater;
+//     }
+//     public static void main(String args[]){
+//         int arr[] = {7, 0, 4, 2, 5, 0, 6, 4, 0, 5};
+//         System.out.print(TrappingRainWater(arr));
+//     }
+// }
+
+// public class jav{
+//     static class Queue{
+//         static int arr[];
+//         static int rear;
+//         static int size;
+//         static int front;
+//         Queue(int n){
+//             arr = new int[n];
+//             size = n;
+//             rear = -1;
+//             front = -1;
+//         }
+//         public static boolean isEmpty(){
+//             return rear == -1 && front == -1;
+//         }
+//         public static boolean isFull(){
+//             return (rear+1)% size == front;
+//         }
+//         public static void add(int data){
+//             if(isFull()){
+//                 System.out.print("Queue Full");
+//                 return;
+//             }
+//             if(front == -1){
+//                 front = 0;
+//             }
+//             rear = (rear+1) % size;
+//             arr[rear] = data;
+//         }
+//         public static int remove(){
+//             if(isEmpty()){
+//                 System.out.print("Queue Empty");
+//                 return -1;
+//             }
+//             int result = arr[front];
+//             if(rear == front){
+//                 rear = front = -1;
+//             }else{
+//                 front = (front+1)%size;
+//             }
+//             return result;
+//         }
+//         public static int peek(){
+//              if(isEmpty()){
+//                 System.out.print("Queue Empty");
+//                 return -1;
+//             }
+//             return arr[front];
+//         }
+// }
+//     public static void main(String args[]){
+//         Queue q = new Queue(5);
+//         q.add(1);q.add(2);q.add(3);q.add(4);
+//         System.out.print(q.remove());
+//         q.add(5);
+//         System.out.print(q.remove());
+//         q.add(6);
+
+//         while(!q.isEmpty()){
+//             System.out.print(q.peek() +" ");
+//             q.remove();
+//         }
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node next;
+//         Node(int data){
+//             this.data = data;
+//             this.next = null;
+//         }
+//     }
+//     static class Queue{
+//         static Node head = null;
+//         static Node tail = null;
+
+//         public static boolean isEmpty(){
+//             return head == null && tail == null;
+//         }
+//         public static void add(int data){
+//             Node newNode = new Node(data);
+//             if(head == null){
+//                 head = tail = newNode;
+//                 return;
+//             }
+//             tail.next = newNode;
+//             tail = newNode;
+//         }
+//         public static int remove(){
+//             if(isEmpty()){
+//                 System.out.print("Empty Queue");
+//                 return-1;
+//             }
+//             int front = head.data;
+//             if(tail == head){
+//                 tail = head = null;
+//             }else{
+//                 head = head.next;
+//             }
+//             return front;
+//         }
+//         public static int peek(){
+//             if(isEmpty()){
+//                 System.out.print("Empty Queue");
+//                 return-1;
+//             }
+//             return head.data;
+//         }
+//     }
+//     public static void main(String args[]){
+//         Queue q = new Queue();
+//         q.add(1);q.add(2);q.add(3);
+
+//         while(!q.isEmpty()){
+//             System.out.print(q.peek()+" ");
+//             q.remove();
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         Queue<Integer> q = new LinkedList<>();
+//         // Queue<Integer> q = new ArrayDeque<>();
+//         q.add(1);q.add(2);q.add(3);
+//         while(!q.isEmpty()){
+//             System.out.print(q.peek()+" ");
+//             q.remove();
+//         }
+//     }
+// }
+
+// public class jav{
+//     static class Queue{
+//         Stack<Integer> s1 = new Stack<>();
+//         Stack<Integer> s2 = new Stack<>();
+
+//         public boolean isEmpty(){
+//             return s1.isEmpty();
+//         }
+//         public void add(int data){
+//             while(!s1.isEmpty()){
+//                 s2.push(s1.pop());
+//             }
+//             s1.push(data);
+//             while(!s2.isEmpty()){
+//                 s1.push(s2.pop());
+//             }
+//         }
+//         public int remove(){
+//             if(isEmpty()){
+//                 System.out.print("queue Empty");
+//                 return -1;
+//             }
+//             return s1.pop();
+//         }
+//         public int peek(){
+//             if(isEmpty()){
+//                 System.out.print("queue Empty");
+//                 return -1;
+//             }
+//             return s1.peek();
+//         }
+//     }
+//     public static void main(String args[]){
+//         Queue q = new Queue();
+//         q.add(1);q.add(2);q.add(3);
+//         while(!q.isEmpty()){
+//             System.out.print(q.peek()+" ");
+//             q.remove();
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void printNonRepeating(String str){
+//         Queue<Character> q = new LinkedList<>();
+//         int freq[] = new int[26];//a-z
+//         for(int i=0; i<str.length(); i++){
+//             char ch = str.charAt(i);
+//             q.add(ch);//x
+//             freq[ch - 'a']++;//a = 2, b = 2, c = 1
+//             while(!q.isEmpty() && freq[q.peek() - 'a'] > 1){
+//                 q.remove();
+//             }
+//             if(q.isEmpty()){
+//                 System.out.print(-1+" ");
+//             }else{
+//                 System.out.print(q.peek()+" ");//a a a a c c x
+//             }
+//         }
+//     }
+//     public static void main(String args[]){
+//         String str = "abcbaxc";
+//         printNonRepeating(str);
+//     }
+// }
+
+// public class jav{
+//     public static void interLeave(Queue<Integer> q){
+//         Queue<Integer> firstHalf = new LinkedList<>();
+//         int size = q.size()/2;
+//         for(int i=0; i<size; i++){
+//             firstHalf.add(q.remove());
+//         }
+//         while(!firstHalf.isEmpty()){
+//             q.add(firstHalf.remove());
+//             q.add(q.remove());
+//         }
+//         return;
+//     }
+//     public static void main(String args[]){
+//         Queue<Integer> q = new LinkedList<>();
+//         q.add(1);q.add(2);q.add(3);q.add(4);q.add(5);q.add(6);q.add(7);q.add(8);q.add(9);q.add(10);
+//         interLeave(q);
+//         while(!q.isEmpty()){
+//             System.out.print(q.peek()+" ");
+//             q.remove();
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void QueueReverse(Queue<Integer> q){
+//         Stack<Integer> s = new Stack<>();
+//         while(!q.isEmpty()){
+//             s.push(q.remove());
+//         }
+//         while(!s.isEmpty()){
+//             q.add(s.pop());
+//         }
+//         return;
+//     }
+//     public static void main(String args[]){
+//         Queue<Integer> q = new LinkedList<>();
+//         q.add(1);q.add(2);q.add(3);q.add(4);q.add(5);
+//         QueueReverse(q);
+//         while(!q.isEmpty()){
+//             System.out.print(q.peek()+" ");
+//             q.remove();
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         Deque<Integer> deque = new LinkedList<>();
+//         deque.addFirst(1);
+//         deque.addFirst(2);
+//         System.out.println(deque);
+//         deque.removeLast();
+//         System.out.println(deque);
+//     }
+// }
+
+// public class jav{
+//     static class Stack{
+//         Deque<Integer> deque = new LinkedList<>();
+//         public void push(int data){
+//             deque.addLast(data);
+//             return;
+//         }
+//         public int pop(){
+//             return deque.removeLast();
+//         }
+//         public int peek(){
+//             return deque.getLast();
+//         }
+//     }
+//     static class Queue{
+//         Deque<Integer> deque = new LinkedList<>();
+//         public void add(int data){
+//             deque.addLast(data);
+//         }
+//         public int remove(){
+//             return deque.removeFirst();
+//         }
+//         public int peek(){
+//             return deque.getFirst();
+//         }
+//     }
+//     public static void main(String args[]){
+//         // Stack s = new Stack();
+//         // s.push(1);s.push(2);s.push(3);
+//         // System.out.print("peek --> " + s.peek()+" ");
+//         // System.out.print(s.pop()+" ");
+//         // System.out.print(s.pop()+" ");
+//         // System.out.print(s.pop()+" ");
+        
+//         Queue q = new Queue();
+//         q.add(1);q.add(2);q.add(3);
+//         System.out.print(q.remove()+" ");
+//         System.out.print(q.remove()+" ");
+//         System.out.print(q.remove()+" ");
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int start[] = {1, 3, 0, 5, 8, 5};
+//         int end[] = {2, 4, 6, 7, 9, 9};
+
+//         int activities[][] = new int[start.length][3];
+//         for(int i=0; i<start.length; i++){
+//             activities[i][0] = i;
+//             activities[i][1] = start[i];
+//             activities[i][2] = end[i];
+//         }
+//         Arrays.sort(activities, Comparator.comparingDouble(o -> o[2]));
+
+//         int maxAct;
+//         ArrayList<Integer> ans = new ArrayList<>();
+
+//         maxAct = 1;
+//         ans.add(activities[0][0]);
+//         int lastEnd = activities[0][2];
+
+//         for(int i=1; i<start.length; i++){
+//             if(lastEnd <= activities[i][1]){
+//                 maxAct++;
+//                 ans.add(activities[i][0]);
+//                 lastEnd = activities[i][2];
+//             }
+//         }
+//         System.out.println("Max Activities = "+ maxAct);
+//         for(int i=0; i<ans.size(); i++){
+//             System.out.print("A"+ans.get(i)+" ");
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void intToBinary(int num){
+//         if(num == 0){
+//             System.out.print("0 ");
+//             return;
+//         }
+//         int binary =0;
+//         int place = 1;
+//         while(num>0){
+//             int rem = num % 2;
+//             binary = binary + rem * place;
+//             place *= 10;
+//             num /= 2;
+//         }
+//         System.out.print(binary+" ");
+//     }
+//     public static void main(String args[]){
+//         int num = 5;
+//         for(int i=0; i<=5; i++){
+//             intToBinary(i);
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int val[] = {60, 100, 120};
+//         int weight[] = {10, 20, 30};
+//         int w = 50;
+//         double ratio[][] = new double[val.length][2];
+//         for(int i=0; i<ratio.length; i++){
+//             ratio[i][0] = i;
+//             ratio[i][1] = val[i]/(double)weight[i];
+//         }
+//         Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
+//         int capacity = w;
+//         int finalval = 0;
+//         for(int i=ratio.length-1; i>=0; i--){
+//             int idx = (int)ratio[i][0];
+//             if(capacity >= weight[idx]){
+//                 finalval += val[idx];
+//                 capacity -= weight[idx];
+//             }else{
+//                 finalval += (ratio[i][1] * capacity);
+//                 capacity = 0;
+//                 break;
+//             }
+//         }
+//         System.out.print(finalval);
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int A[] = {4, 1, 8, 7};
+//         int B[] = {2, 3, 6, 5};
+//         Arrays.sort(A);
+//         Arrays.sort(B);
+
+//         int minDiff = 0;
+//         int minSum = 0;
+//         for(int i=0; i<A.length; i++){
+//             minDiff = A[i] - B[i];
+//             if(minDiff < 0){
+//                 minDiff = -(minDiff);
+//             }
+//             minSum += minDiff;
+//         }
+//         System.out.print(minSum);
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int pairs[][] = {
+//             {5, 24},
+//             {39, 60},
+//             {5, 28},
+//             {27, 40},
+//             {50, 90}
+//         };
+//         Arrays.sort(pairs, Comparator.comparingDouble(o -> o[1]));
+//         int chainLen = 1;
+//         int chainEnd = pairs[0][1];
+//         for(int i=1; i<pairs.length; i++){
+//             if(chainEnd < pairs[i][0]){
+//                 chainLen++;
+//                 chainEnd = pairs[i][1];
+//             }
+//         }
+//         System.out.print(chainLen);
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+
+//         Scanner sc = new Scanner(System.in);
+//         System.out.print("Enter your amount : ");
+//         int amount = sc.nextInt();//590
+
+//         int coins[] = {2000, 500, 100, 50, 20, 10, 5, 2, 1};
+//         int countOfCoins = 0;
+
+//         for(int i=0; i<coins.length; i++){
+//             if(coins[i] <= amount){
+//                 while(coins[i] <= amount){
+//                     countOfCoins++;
+//                     System.out.print(coins[i]+" ");
+//                     amount -= coins[i];
+//                 }
+//             }
+//         }
+//         System.out.println(countOfCoins);
+//     }
+// }
+
+// public class jav{
+//     static class Job{
+//         int deadline;
+//         int profit;
+//         int id;
+//         public Job(int i, int d, int p){
+//             id = i; 
+//             deadline = d;
+//             profit = p;
+//         }
+//     }
+//     public static void main(String args[]){
+//         int jobsInfo[][] = {{4, 20}, {1, 10}, {1, 40}, {1, 30}};
+
+//         ArrayList<Job> jobs = new ArrayList<>();
+
+//         for(int i=0; i<jobsInfo.length; i++){
+//             jobs.add(new Job(i, jobsInfo[i][0], jobsInfo[i][1]));
+//         }
+
+//         Collections.sort(jobs, (obj1, obj2) -> obj2.profit - obj1.profit);
+
+//         ArrayList<Integer> seq = new ArrayList<>();
+//         int time = 0;
+//         for(int i=0; i<jobs.size(); i++){
+//             Job curr = jobs.get(i);
+//             if(curr.deadline > time){
+//                 seq.add(curr.id);
+//                 time++;
+//             }
+//         }
+//         System.out.println(time);
+//         for(int i=0; i<seq.size(); i++){
+//             System.out.print(seq.get(i)+" ");
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int n = 4, m = 6;
+//         Integer costVer[] = {2, 1, 3, 1, 4};
+//         Integer costHor[] = {4, 1, 2};  
+
+//         Arrays.sort(costVer, Collections.reverseOrder());
+//         Arrays.sort(costHor, Collections.reverseOrder());
+        
+//         int h = 0, v = 0 ;
+//         int hp = 1, vp = 1;
+//         int cost = 0;
+//         while(h < costVer.length && v < costHor.length){
+//             if(costVer[v] <= costHor[h]){//horizontal cuts
+//                 cost += (costHor[h] * vp);
+//                 hp++;
+//                 h++;
+//             }else{//vertical cuts
+//                 cost += (costVer[v] * hp);
+//                 vp++;
+//                 v++;
+//             }
+//         }
+//         while(h < costHor.length){
+//             cost += (costHor[h] * vp);
+//             hp++;
+//             h++;
+//         }
+//         while(v < costVer.length){
+//             cost += (costVer[v] * hp);
+//             vp++;
+//             v++;
+//         }
+//         System.out.print("Minimum cost : "+cost);
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int arr[] = {12, 4, 7, 2, 9, 15, 3};
+
+//         PriorityQueue<Integer> pq = new PriorityQueue<>();
+        
+//         for(int x : arr){
+//             pq.add(x);
+//         }
+
+//         int totalCost = 0;
+
+//         while(pq.size() > 1){
+//             int first = pq.poll();
+//             int second = pq.poll();
+
+//             int cost = first + second;
+//             totalCost += cost;
+//             System.out.print(totalCost+" ");
+//             pq.add(cost);
+//         }
+
+//         System.out.println("\n"+totalCost);
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int deadLine[] = {3, 3, 1};
+//         int profit[]   = {100, 90, 80};
+
+//         int jobs[][] = new int[profit.length][2];
+
+//         for(int i=0; i<profit.length; i++){
+//             jobs[i][0] = deadLine[i];
+//             jobs[i][1] = profit[i];
+//         }
+
+//         Arrays.sort(jobs, (a, b) -> b[1] - a[1]);
+
+//         int maxDeadline = 0;
+//         for(int i=0; i<jobs.length; i++){
+//             maxDeadline = Math.max(maxDeadline, jobs[i][0]);//3
+//         }
+
+//         boolean slot[] = new boolean[maxDeadline + 1];
+
+//         int totalProfit = 0;
+//         for(int i=0; i<jobs.length; i++){
+//             for(int j=jobs[i][0]; j>0; j--){
+//                 if(!slot[j]){
+//                     slot[j] = true;
+//                     totalProfit += jobs[i][1];
+//                     break;
+//                 }
+//             }
+//         }
+//         System.out.print(totalProfit);
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         Queue<Integer> q = new LinkedList<>();
+//         q.add(10);q.add(20);q.add(30);q.add(40);q.add(50);
+//         q.add(60);q.add(70);q.add(80);q.add(90);q.add(100);
+//         int k = 5;
+
+//         Stack<Integer> s = new Stack<>();
+//         for(int i=0; i<k; i++){
+//             s.push(q.remove());
+//         }
+//         for(int i=0; i<k; i++){
+//             q.add(s.pop());
+//         }
+
+//         int reverse = q.size() - k;
+//         for(int i=0; i<reverse; i++){
+//             q.add(q.remove());
+//         }
+
+//         while(!q.isEmpty()){
+//             System.out.print(q.remove()+" ");
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int arr[] = {1, 2, 3, 1, 4, 5, 2, 3, 6};
+//         int k = 3;
+//         int n = arr.length;
+
+//         Deque<Integer> dq = new LinkedList<>();
+
+//         for(int i=0; i<k; i++){
+//             while(!dq.isEmpty() && arr[dq.peekLast()] <= arr[i]){
+//                 dq.removeLast();
+//             }
+//             dq.addLast(i);
+//         }
+
+//         for(int i=k; i<n; i++){
+//             System.out.print(arr[dq.peekFirst()]+" ");
+//             while(!dq.isEmpty() && dq.peekFirst() <= i - k){
+//                 dq.removeFirst();
+//             }
+
+//             while(!dq.isEmpty() && arr[dq.peekLast()] <= arr[i]){
+//                 dq.removeLast();
+//             }
+//             dq.addLast(i);
+//         }
+//         System.out.print(arr[dq.peekFirst()]);
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+//             this.left = null;
+//             this.right = null;
+//         }
+//     }
+//     static class BinaryTree {
+//         static int idx = -1;
+//         public static Node buildTree(int nodes[]){
+//             idx++;
+//             if(nodes[idx] == -1){
+//                 return null;
+//             }
+//             Node newNode = new Node(nodes[idx]);
+//             newNode.left = buildTree(nodes);
+//             newNode.right = buildTree(nodes);
+//             return newNode;
+//         }
+//         public static void preorder(Node root){
+//             if(root == null){
+//                 return;
+//             }
+//             System.out.print(root.data+" ");
+//             preorder(root.left);
+//             preorder(root.right);
+//         }
+//         public static void inorder(Node root){
+//             if(root == null){
+//                 return;
+//             }
+//             inorder(root.left);
+//             System.out.print(root.data+" ");
+//             inorder(root.right);
+//         }
+//         public static void postorder(Node root){
+//             if(root == null){
+//                 return;
+//             }
+//             postorder(root.left);
+//             postorder(root.right);
+//             System.out.print(root.data+" ");
+//         }
+//         //Level Order Traversal
+//         public static void levelOrder(Node root){
+//             if(root == null){
+//                 return;
+//             }
+//             Queue<Node> q = new LinkedList<>();
+//             q.add(root);
+//             q.add(null);
+
+//             while(!q.isEmpty()){
+//                 Node currNode = q.remove();
+//                 if(currNode == null){
+//                     System.out.println();
+//                     if(q.isEmpty()){
+//                         break;
+//                     }else{
+//                         q.add(null);
+//                     }
+//                 }else{
+//                     System.out.print(currNode.data+" ");
+//                     if(currNode.left != null){
+//                         q.add(currNode.left);
+//                     }
+//                     if(currNode.right != null){
+//                         q.add(currNode.right);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     public static void main(String args[]){
+//         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+//         BinaryTree tree = new BinaryTree();
+//         Node root = tree.buildTree(nodes);
+//         tree.levelOrder(root);
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right; 
+//         public Node(int data){
+//             this.data = data;
+//             this.left = null;
+//             this.right = null;
+//         }
+//     } 
+//     public static int height(Node root) {
+//         if(root == null){
+//             return 0;
+//         }
+//         int lh = height(root.left);
+//         int rh = height(root.right);
+//         return Math.max(lh, rh) + 1;
+//     }
+//     public static int countNodes(Node root){
+//         if(root == null){
+//             return 0;
+//         }
+//         int ls = countNodes(root.left);
+//         int rs = countNodes(root.right);
+//         return (ls + rs) + 1;
+//     }
+//     public static int sumNodes(Node root){
+//         if(root == null){
+//             return 0;
+//         }
+//         int ls = sumNodes(root.left);
+//         int rs = sumNodes(root.right);
+//         return ls + rs + root.data;
+//     }
+//     public static int diameter1(Node root){//approch 1) --> o(n^2) 
+//         if(root == null){
+//             return 0;
+//         }
+//         int leftDiam = diameter1(root.left);
+//         int leftHt = height(root.left);
+//         int rightDiam = diameter1(root.right);
+//         int rightHt = height(root.right);
+
+//         int selfDiam = leftHt + rightHt + 1;
+
+//         return Math.max(selfDiam, Math.max(leftDiam, rightDiam));
+//     }
+//     static class Info{
+//         int diam;
+//         int ht;
+//         public Info(int diam, int ht){
+//             this.diam = diam;
+//             this.ht = ht;
+
+//         }
+//     }
+//     public static Info diameter(Node root){////approch 2) --> o(n) 
+//         if(root == null){
+//             return new Info(0, 0);
+//         }
+//         Info leftInfo = diameter(root.left);
+//         Info rightInfo = diameter(root.right);
+
+//         int diam = Math.max(Math.max(leftInfo.diam, rightInfo.diam), leftInfo.ht + rightInfo.ht + 1);
+//         int ht = Math.max(leftInfo.ht, rightInfo.ht) + 1;
+//         return new Info(diam, ht);
+//     }
+//     public static void main(String args[]){
+//         /*          1
+//                    / \        
+//                   2   3     
+//                  / \ / \   
+//                 4  5 6  7      
+//         */                       
+//         Node root = new Node(1);
+//         root.left = new Node(2);
+//         root.right = new Node(3);
+//         root.left.left = new Node(4);
+//         root.left.right = new Node(5);
+//         root.right.left = new Node(6);
+//         root.right.right = new Node(7);
+
+//         System.out.println(diameter(root).ht);
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+//             this.left = null;
+//             this.right = null;
+//         }
+//     }
+    
+//     public static boolean isIdentical(Node root, Node subRoot){
+//         if(root == null && subRoot == null){
+//             return true;
+//         }else if(root == null || subRoot == null || root.data != subRoot.data){
+//             return false;
+//         }
+        
+//         if(!isIdentical(root.left, subRoot.left)){
+//             return false;
+//         }
+//         if(!isIdentical(root.right, subRoot.right)){
+//             return false;
+//         }
+//         return true;
+//     }
+
+//     public static boolean isSubtree(Node root, Node subRoot){
+//         if(root == null){
+//             return false;
+//         }
+//         if(root.data == subRoot.data) {
+//             if(isIdentical(root, subRoot)){
+//                 return true;
+//             }
+//         }
+//         return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+//     }
+//     public static void main(String args[]){
+//         Node root = new Node(1);       //           1 
+//         root.left = new Node(2);       //          / \   
+//         root.right = new Node(3);      //         2   3  
+//         root.left.left = new Node(4);  //        / \ / \ 
+//         root.left.right = new Node(5); //       4  5 6  7
+//         root.right.left = new Node(6);             
+//         root.right.right = new Node(7); 
+
+//         Node subRoot = new Node(2);     //           2 
+//         subRoot.left = new Node(4);     //          / \ 
+//         subRoot.right = new Node(5);    //         4   5
+//         System.out.println(isSubtree(root, subRoot));
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+//             this.left = null;
+//             this.right = null;
+//         }
+//     }
+//     static class Info{
+//         Node node;
+//         int hd;
+//         public Info(Node node, int hd){
+//             this.node = node;
+//             this.hd = hd;
+//         }
+//     }
+//     public static void topView(Node root){
+//         Queue<Info> q = new LinkedList<>();
+//         HashMap<Integer, Node> map = new HashMap<>();
+
+//         q.add(new Info(root, 0));
+//         q.add(null);
+//         int min = 0, max = 0;
+
+//         while(!q.isEmpty()){
+//             Info curr = q.remove();
+//             if(curr == null){
+//                 if(q.isEmpty()){
+//                     break;
+//                 }else{
+//                     q.add(null);
+//                 }
+//             }else{
+//                 if(!map.containsKey(curr.hd)){
+//                     map.put(curr.hd, curr.node);
+//                 }
+
+//                 if(curr.node.left != null){
+//                     q.add(new Info(curr.node.left, curr.hd - 1));
+//                     min = Math.min(min, curr.hd - 1);
+//                 }
+
+//                 if(curr.node.right != null){
+//                     q.add(new Info(curr.node.right, curr.hd + 1));
+//                     max = Math.max(max, curr.hd + 1);
+//                 }
+//             }
+//         }
+//         for(int i=min; i<=max; i++){
+//             System.out.print(map.get(i).data + " ");
+//         }
+//     }
+//     public static void main(String args[]){
+//         Node root = new Node(1);       //           1 
+//         root.left = new Node(2);       //          / \   
+//         root.right = new Node(3);      //         2   3  
+//         root.left.left = new Node(4);  //        / \ / \ 
+//         root.left.right = new Node(5); //       4  5 6  7
+//         root.right.left = new Node(6);             
+//         root.right.right = new Node(7); 
+
+//         topView(root);
+//     }
+// }
+
+// public class jav{//job sequencing
+//     static class Job{
+//         int id;
+//         int deadline;
+//         int profit;
+//         public Job(int id, int deadline, int profit){
+//             this.id = id;
+//             this.deadline = deadline;
+//             this.profit = profit;
+//         }
+//     }
+//     public static void main(String args[]){
+//         int jobsInfo[][] = {{4,20}, {1,10}, {1,40}, {1,30}};
+
+//         ArrayList<Job> jobs = new ArrayList<>();
+
+//         for(int i=0; i<jobsInfo.length; i++){
+//             jobs.add(new Job(i, jobsInfo[i][0], jobsInfo[i][1]));
+//         }
+
+//         Collections.sort(jobs, (a, b) -> b.profit - a.profit);
+
+//         int maxDeadline = 0;
+//         for(Job j : jobs){
+//             maxDeadline = Math.max(maxDeadline, j.deadline);
+//         }
+
+//         boolean slot[] = new boolean[maxDeadline + 1];
+//         int totalProfit = 0;
+
+//         for(Job curr : jobs){
+//             for(int t = curr.deadline; t>0; t--){
+//                 if(!slot[t]){
+//                     slot[t] = true;;
+//                     totalProfit += curr.profit;
+//                     System.out.print(curr.id + " ");
+//                     break;
+//                 }
+//             }
+//         }
+//         System.out.println("\nTotal Profit = " + totalProfit);
+//     }
+// }
+
+// public class jav{
+
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+//             this.left = null;
+//             this.right = null;
+//         }
+//     }
+
+    // public static void KLevel(Node root, int level, int k){
+    //     if(root == null){
+    //         return;
+    //     }
+
+    //     if(level == k){
+    //         System.out.print(root.data+" ");
+    //         return;
+    //     }
+
+    //     KLevel(root.left, level+1, k);
+    //     KLevel(root.right, level+1, k);
+    // }
+
+    // public static boolean getPath(Node root, int n, ArrayList<Node> path){
+    //     if(root == null){
+    //         return false;
+    //     }
+
+    //     path.add(root);
+
+    //     if(root.data == n){
+    //         return true;
+    //     }
+
+    //     boolean pathLeft = getPath(root.left, n, path);
+    //     boolean pathRight = getPath(root.right, n, path);
+
+    //     if(pathLeft || pathRight){
+    //         return true;
+    //     }
+
+    //     path.remove(path.size()-1);
+    //     return false;
+    // }
+
+    // public static Node lowestCommonAncestor1(Node root, int n1, int n2){//time - > o(n)
+    //     ArrayList<Node> path1 = new ArrayList<>();                      //space - >o(n)
+    //     ArrayList<Node> path2 = new ArrayList<>();
+
+    //     getPath(root, n1, path1);
+    //     getPath(root, n2, path2);
+
+    //     int i=0;
+    //     for(; i<path1.size() && i<path2.size();i++){
+    //         if(path1.get(i) != path2.get(i)){
+    //             break;
+    //         }
+    //     }
+    //     return path1.get(i-1);
+    // }
+
+    // public static Node lowestCommonAncestor2(Node root, int n1, int n2){
+    //     if(root == null || root.data == n1 || root.data == n2){
+    //         return root;
+    //     }
+
+    //     Node leftLca = lowestCommonAncestor2(root.left, n1, n2);
+    //     Node rightLca = lowestCommonAncestor2(root.right, n1, n2);
+
+    //     if(rightLca == null){
+    //         return leftLca;
+    //     }
+    //     if(leftLca == null){
+    //         return rightLca;
+    //     }
+
+    //     return root;
+    // }
+
+    // public static int lcaDist(Node root, int n){
+    //     if(root == null){
+    //         return -1;
+    //     }
+    //     if(root.data == n){
+    //         return 0;
+    //     }
+
+    //     int leftDist = lcaDist(root.left, n);
+    //     int rightDist = lcaDist(root.right, n);
+
+    //     if(leftDist == -1 && rightDist == -1){
+    //         return -1;
+    //     }else if(leftDist == -1){
+    //         return rightDist + 1;
+    //     }else{
+    //         return leftDist + 1;
+    //     }
+    // }
+
+    // public static int minDist(Node root, int n1, int n2){
+    //     Node lca = lowestCommonAncestor2(root, n1, n2);
+
+    //     int dist1 = lcaDist(lca, n1);
+    //     int dist2 = lcaDist(lca, n2);
+
+    //     return dist1 + dist2;
+    // }
+
+    // public static int KAncestor(Node root, int n, int k){
+    //     if(root == null){
+    //         return -1;
+    //     }
+    //     if(root.data == n){
+    //         return 0;
+    //     }
+    //     int leftDist = KAncestor(root.left, n, k);
+    //     int rightDist = KAncestor(root.right, n, k);
+
+    //     if(leftDist == -1 && rightDist == -1){
+    //         return -1;
+    //     }
+
+    //     int max = Math.max(leftDist, rightDist);
+    //     if(max+1 == k){
+    //         System.out.println(root.data);
+    //     }
+    //     return max+1;
+    // }
+
+//     public static int transformToSum(Node root){    //      1              27                     
+//         if(root == null){                           //     / \            /  \    
+//             return 0;                               //    2   3   -->    9    13                                                                  
+//         }                                           //   / \ / \        /  \ /  \                                                                        
+//                                                     //  4  5 6  7      0   0 0   0                                                                
+//         int leftChild = transformToSum(root.left);                                                                                                                     
+//         int rightChild = transformToSum(root.right);                                                                                                                     
+                                                                                                                     
+//         int data = root.data;//this value will be update in root.data so we keep in leftchild or rightchild through return data
+
+//         int newLeft = root.left == null ? 0 : root.left.data;
+//         int newRight = root.right == null ? 0 : root.right.data;
+
+//         root.data = newLeft + leftChild + newRight + rightChild;
+
+//         return data;
+//     }
+
+//     public static void preOrder(Node root){
+//         if(root == null){
+//             return;
+//         }
+//         System.out.print(root.data+" ");
+//         preOrder(root.left);
+//         preOrder(root.right);
+//     }
+
+//     public static void main(String args[]){
+//         Node root = new Node(1);       //           1   
+//         root.left = new Node(2);       //          / \    
+//         root.right = new Node(3);      //         2   3  
+//         root.left.left = new Node(4);  //        / \ / \ 
+//         root.left.right = new Node(5); //       4  5 6  7
+//         root.right.left = new Node(6);             
+//         root.right.right = new Node(7); 
+
+//         transformToSum(root);
+//         preOrder(root);
+//     }
+// }
+
+// public class jav {
+//     static class Node {
+//         int data;
+//         Node left;
+//         Node right;
+
+//         public Node(int data) {
+//             this.data = data;
+//             this.left = left;
+//             this.right = right;
+//         }
+//     }
+//     public static boolean checkUnivalued(Node root) {
+//         if(root == null){
+//             return true;
+//         }
+
+//         if(root.left != null && root.left.data != root.data) {
+//             return false;
+//         }
+//         if(root.right != null && root.right.data != root.data) {
+//             return false;
+//         }
+        
+//         return checkUnivalued(root.left) && checkUnivalued(root.right);
+//     }
+
+    
+//     public static void main(String args[]) {
+//         Node root = new Node(2);       //        2                                          
+//         root.left = new Node(2);       //       / \                                          
+//         root.right = new Node(2);      //      2   2                                          
+//         root.left.left = new Node(5);  //     / \                                              
+//         root.left.right = new Node(2); //    5   2                                              
+
+//         System.out.print(checkUnivalued(root));
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+//             left = right = null;
+//         }
+//     }
+
+    // public static void invertBinaryTree(Node root){
+    //     if(root == null){                        //       1              1                                                                                                 
+    //         return;                              //      / \            / \                                                                                        
+    //     }                                        //     2   3    -->   3   2                                                                               
+    //                                              //    / \ / \        / \ / \                                                                      
+    //     Node temp = root.left;                   //   4  5 6  7      7  6 5  4                                                                                                 
+    //     root.left = root.right;                                                                                                             
+    //     root.right = temp;                                                                                                              
+                                                                                                                
+    //     invertBinaryTree(root.left);                                                                                                                
+    //     invertBinaryTree(root.right);                                                                                                               
+
+    // }
+
+    // public static Node removeLeafNodesWithX(Node root, int x){                                                                                                                                      
+    //     if(root == null){                               //       1              1                                                                                                           
+    //         return null;                                //      / \            / \                                                                                                          
+    //     }                                               //     2   3    -->   2   3                                                                                         
+    //                                                     //    / \ / \          \   \                                                                                
+    //     root.left = removeLeafNodesWithX(root.left, x); //   3  5 3  7         5    7                                                                                                                                   
+    //     root.right = removeLeafNodesWithX(root.right, x);                                                                                                                                       
+                                                                                                                                        
+    //     if(root.left == null && root.right == null && root.data == x){
+    //         return null;
+    //     }
+
+    //     return root;
+    // }
+
+    // public static String DuplicateSubtrees(Node root, HashMap<String, Integer> map, ArrayList<Node> res){
+    //     if(root == null){                                     //           1                                                                                   
+    //         return "#";                                       //          / \                                                                              
+    //     }                                                     //         3   3                                                                 
+    //                                                           //        / \ / \                                                        
+    //     String left = DuplicateSubtrees(root.left, map, res); //       4  5 4  7                                                                                                                   
+    //     String right = DuplicateSubtrees(root.right, map, res);                                                                                                                     
+                                                                                                                        
+    //     String subtree = left + "," + root.data + "," + right;                                                                                                                      
+                                                                                                                        
+    //     map.put(subtree, map.getOrDefault(subtree, 0) + 1);
+
+    //     if(map.get(subtree) == 2){
+    //         res.add(root);
+    //     }
+        
+    //     return subtree;
+    // }
+
+    // public static void preOrder(Node root){
+    // if(root == null){
+    //     return;
+    // }
+
+    // System.out.print(root.data+" ");
+    // preOrder(root.left);
+    // preOrder(root.right);
+
+    // }
+
+    // public static void main(String args[]){
+    //     Node root = new Node(1);       //           1                                       
+    //     root.left = new Node(2);       //          / \                                       
+    //     root.right = new Node(3);      //         2   3         
+    //     root.left.left = new Node(4);  //        / \ / \                                
+    //     root.left.right = new Node(5); //       4  5 6  7                               
+    //     root.right.left = new Node(6);             
+    //     root.right.right = new Node(7); 
+
+        // invertBinaryTree(root);
+        // removeLeafNodesWithX(root, 3);
+        // preOrder(root);
+
+//         HashMap<String, Integer> map = new HashMap<>();
+//         ArrayList<Node> res = new ArrayList<>();
+//         DuplicateSubtrees(root, map, res);
+//         for(int i=0; i<res.size(); i++){
+//             System.out.print(res.get(i).data+" ");
+//         }
+//     }
+// }
+
+// public class jav{
+//     static class Node {
+//         int data;
+//         Node left;
+//         Node right;
+
+//         Node (int data) {
+//             this.data = data;
+//         }
+//     }
+
+//     public static Node insert(Node root, int val) {
+//         if(root == null){
+//             root = new Node(val);
+//             return root;
+//         }
+
+//         if(root.data > val){
+//             root.left = insert(root.left, val);
+//         }else{
+//             root.right = insert(root.right, val);
+//         }
+//         return root;
+//     }
+
+//     public static void inorder(Node root){
+//         if(root == null){
+//             return;
+//         }
+
+//         inorder(root.left);
+//         System.out.print(root.data+" ");
+//         inorder(root.right);
+//     }
+
+//     public static void main(String args[]){
+//         int values[] = {5, 1, 3, 4, 2, 7};
+//         Node root = null;
+
+//         for(int i=0; i<values.length; i++){
+//             root = insert(root, values[i]);
+//         }
+
+//         inorder(root);
+//         System.out.println();
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node (int data){
+//             this.data = data;
+//         }
+//     }
+
+//     public static boolean search(Node root, int val){
+//         if(root == null){
+//             return false;
+//         }
+
+//         if(root.data == val){
+//             return true;
+//         }
+
+//         if(root.data > val){
+//             return search(root.left, val);
+//         }else{
+//             return search(root.right, val);
+//         }
+//     }
+
+//     public static void main(String args[]){     //        5                                                                                                                          
+//         Node root = new Node(5);                //      /   \                                                                                                                                                                          
+//         root.left = new Node(1);                //     1     7                                                                                                                                                                          
+//         root.right = new Node(7);               //      \                                                                                                                                                                          
+//         root.left.right = new Node(3);          //       3                                                                                                                                                                              
+//         root.left.right.left = new Node(2);     //      / \                                                                                                                                                                                  
+//         root.left.right.right = new Node(4);    //     2   4                                                                                                                                                                                      
+
+//         System.out.print(search(root, 4));
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+//         }
+//     }
+
+//     public static void inorder(Node root){
+//         if(root == null){
+//             return;
+//         }
+
+//         inorder(root.left);
+//         System.out.print(root.data+" ");
+//         inorder(root.right);
+//     }
+
+//     public static Node insert(Node root, int val){
+//         if(root == null){
+//             return new Node(val);
+//         }
+
+//         if(root.data > val){
+//             root.left = insert(root.left, val);
+//         }else{
+//             root.right = insert(root.right, val);
+//         }
+//         return root;
+//     }
+
+//     public static Node delete(Node root, int val){
+//         if(root.data > val){
+//             root.left = delete(root.left, val);
+//         }
+//         else if(root.data < val){
+//             root.right = delete(root.right, val);
+//         }
+//         else{//viola
+
+//             //case 1 -> leaf node
+//             if(root.left == null && root.right == null){
+//                 return null;
+//             }
+
+//             //case 2 -> single child 
+//             if(root.left == null){
+//                 return root.right;
+//             }else if(root.right == null){
+//                 return root.left;
+//             }
+
+//             //case 3 -> both child
+//             Node Is = findInorderSuccessor(root.right);
+//             root.data = Is.data;
+//             root.right = delete(root.right, Is.data);
+//         }
+//         return root;
+//     }
+
+//     public static Node findInorderSuccessor(Node root){
+//         while(root.left != null){
+//             root = root.left;
+//         }
+//         return root;
+//     }
+
+//     public static void printInRange(Node root, int k1, int k2){
+//         if(root == null) return;
+
+//         if(root.data >= k1 && root.data <= k2){
+//             printInRange(root.left, k1, k2);
+//             System.out.print(root.data + " ");
+//             printInRange(root.right, k1, k2);
+//         }
+//         else if(root.data < k1){
+//             printInRange(root.left, k1, k2);
+//         }
+//         else{
+//             printInRange(root.right, k1, k2);
+//         }
+//     }
+
+//     public static void printPath(ArrayList<Integer> path){
+//         for(int i=0; i<path.size(); i++){
+//             System.out.print(path.get(i)+"->");
+//         }
+//         System.out.println("Null");
+//     }
+
+//     public static void printRoot2Leaf(Node root, ArrayList<Integer> path){
+//         if(root == null){
+//             return;
+//         }
+
+//         path.add(root.data);
+
+//         if(root.right == null && root.left == null){
+//             printPath(path);
+//         }
+        
+//         printRoot2Leaf(root.left, path);
+//         printRoot2Leaf(root.right, path);
+
+//         path.remove(path.size()-1);
+//     }
+
+//     public static boolean isValidBST(Node root, Node min, Node max){
+//         if(root == null){
+//             return true;
+//         }
+
+//         if(min != null && root.data <= min.data){
+//             return false;
+//         }
+
+//         if(max != null && root.data >= max.data){
+//             return false;
+//         }
+
+//         return (isValidBST(root.left, min, root)) && 
+//                (isValidBST(root.right, root, max));
+//     }
+
+//     public static void main(String args[]){
+//         int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
+
+//         Node root = null;
+
+//         for(int i=0; i<values.length; i++){
+//             root = insert(root, values[i]);
+//         }
+
+//         inorder(root);
+//         System.out.println();
+
+//         // root = delete(root, 6);
+//         // System.out.println();
+
+//         // inorder(root);
+
+//         // printInRange(root, 5, 12);
+
+//         // printRoot2Leaf(root, new ArrayList<>());
+
+//         // if(isValidBST(root, null, null)){
+//         //     System.out.println("valid BST");
+//         // }else{
+//         //      System.out.println("Not valid BST");
+//         // }
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+//             this.left = this.right = null;
+//         }
+//     }
+
+//     public static Node createMirror(Node root){
+//         if(root == null){
+//             return null;
+//         }
+
+//         Node leftMirror = createMirror(root.left);
+//         Node rightMirror = createMirror(root.right);
+
+//         root.right = leftMirror;
+//         root.left = rightMirror;
+
+//         return root;
+//     }
+
+//     public static void preorder(Node root){
+//         if(root == null){
+//             return;
+//         }
+
+//         System.out.print(root.data+" ");
+//         preorder(root.left);
+//         preorder(root.right);
+//     }
+
+//     public static void main(String args[]){
+//         Node root = new Node(8);         //       8                                                      
+//         root.left = new Node(5);         //      / \                                                      
+//         root.right = new Node(10);       //     5   10                                                          
+//         root.left.left = new Node(3);    //    / \    \                                                          
+//         root.left.right = new Node(6);   //   3   6     11                                                              
+//         root.right.right = new Node(11);                                                                      
+
+//         root = createMirror(root);
+//         preorder(root);
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+//         }
+//     }
+
+//     public static Node createBST1(int arr[], int st, int end){
+//         if(st > end){                             //         8                                                                                      
+//             return null;                          //        / \                                                                                          
+//         }                                         //       5   11                                                                          
+//                                                   //      / \  / \                                                                  
+//         int mid = st + (end - st)/2;              //     3  6 10 12                                                                                              
+//         Node root = new Node(arr[mid]);                                                                                                                     
+
+//         root.left = createBST(arr, st, mid-1);
+//         root.right = createBST(arr, mid+1, end);
+
+//         return root;
+//     }
+
+//     public static void preorder(Node root){
+//         if(root == null){
+//             return;
+//         }
+
+//         System.out.print(root.data+" ");
+//         preorder(root.left);
+//         preorder(root.right);
+//     }
+
+//     public static void getInorder(Node root, ArrayList<Integer> inorder){
+//         if(root == null){
+//             return;
+//         }
+
+//         getInorder(root.left);
+//         inorder.add(root.data);
+//         getInorder(root.right);
+//     }
+
+//     public static Node createBST(ArrayList<Integer> inorder, int st, int end){
+//         if(st > end){
+//             return null;
+//         }
+
+//         int mid = st + (end - st)/2;
+//         Node root = new Node(inorder.get(mid));
+
+//         root.left = createBST(root.left, st, mid-1);
+//         root.right = createBST(root.right, mid+1, end);
+        
+//         return root;
+//     }
+
+//     public static Node balanceBST(Node root){             //     8                                                                                                                                        
+//         ArrayList<Integer> inorder = new ArrayList<>();   //    / \                                                                                                                                                
+//         getInorder(root, inorder);                        //   5   11                                                                                                                            
+//                                                           //  / \  / \                                                                                            
+//         root = createBST(inorder, 0, inorder.size()-1);   // 3  6 10 12                                                                                                                                                
+//         return root;                                                                                                                                                    
+//     }                                                                                                                                                   
+
+//     public static void main(String args[]){
+//         // int arr[] = {3, 5, 6, 8, 10, 11, 12};
+
+//         // Node root = createBST(arr, 0, arr.length-1);
+//         // preorder(root);
+
+//         Node root = new Node(8);                //         8                                                                                                                   
+//         root.left = new Node(6);                //        / \                                                                                                                   
+//         root.left.left = new Node(5);           //       6   10                                                                                                                       
+//         root.left.left.left = new Node(3);      //      /      \                                                                                                                                                                                        
+//         root.right = new Node(10);              //     5        11                                                                                                                    
+//         root.right.right = new Node(11);        //    /           \                                                                
+//         root.right.right.right = new Node(12);  //   3             12                        
+
+//         root = balanceBST(root);
+//         preorder(root);
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+//             left = right = null;
+//         }
+//     }
+
+//     static class Info{
+//         boolean isBST;
+//         int size;
+//         int min;
+//         int max;
+//         public Info(boolean isBST, int size, int min, int max){
+//             this.isBST = isBST;
+//             this.size = size;
+//             this.min = min;
+//             this.max = max;
+//         }
+//     }
+
+//     public static int maxBST = 0;
+
+//     public static Info largestBST(Node root){
+//         if(root == null){
+//             return new Info(true, 0, Integer.MAX_VALUE, Integer.MIN_VALUE);
+//         }
+
+//         Info leftInfo = largestBST(root.left);
+//         Info rightInfo = largestBST(root.right);
+
+//         int size = leftInfo.size + rightInfo.size + 1;
+//         int min = Math.min(root.data, Math.min(leftInfo.min, rightInfo.min));
+//         int max = Math.max(root.data, Math.max(leftInfo.max, rightInfo.max));
+
+//         if(root.data <= leftInfo.max || root.data >= rightInfo.min){
+//             return new Info(false, size, min, max);
+//         }
+
+//         if(leftInfo.isBST && rightInfo.isBST){
+//             maxBST = Math.max(maxBST, size);
+//             return new Info(true, size, min, max);
+//         }
+//         return new Info(false, size, min, max);
+//     }
+
+//     public static void main(String args[]){
+//         Node root = new Node(50);       //          50                     60                         
+//         root.left = new Node(30);       //        /    \     largestBST   /  \                               
+//         root.right = new Node(60);      //      30      60       -->     45   70                                   
+//         root.left.left = new Node(5);   //     /  \    /  \                   / \                                   
+//         root.left.right = new Node(20); //    5   20  45   70               65  80                                    
+//         root.right.left = new Node(45); //                 / \                                           
+//         root.right.right = new Node(70);//               65  80                                               
+//         root.right.right.left = new Node(65);                                                   
+//         root.right.right.right = new Node(80);
+
+//         Info info = largestBST(root);
+//         System.out.print(maxBST);
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+
+//         }
+//     }
+
+//     public static int printRange(Node root, int st, int end){
+//         if(root == null){
+//             return 0;
+//         }
+//         int sum = 0;
+        
+//         if(root.data >= st && root.data <= end){
+//             return printRange(root.left, st, end)
+//             + root.data
+//             + printRange(root.right, st, end);
+//         }
+//         else if(root.data < st){
+//             return printRange(root.right, st, end);
+//         }else{
+//             return printRange(root.left, st, end);
+//         }
+//     }
+
+//     public static void main(String args[]){
+//         Node root = new Node(8);         //      8                                        
+//         root.left = new Node(5);         //     / \                                        
+//         root.left.left = new Node(3);    //    5   11                                            
+//         root.left.right = new Node(6);   //   / \    \                                            
+//         root.right = new Node(11);       //  3   6    20                                        
+//         root.right.right = new Node(20);     
+
+//         System.out.print(printRange(root, 6, 10));                                           
+//     }
+// }
+
+// public class jav{
+//     static class Node{
+//         int data;
+//         Node left;
+//         Node right;
+//         public Node(int data){
+//             this.data = data;
+//         }
+//     }
+
+//     public static Node closestValue(Node root, Node closest, int value){
+//         if(root == null){
+//             return closest;
+//         }
+
+//         if(Math.abs(root.data - value) < Math.abs(closest.data - value)){
+//             closest = root;
+//         }
+
+//         if(root.data > value){
+//             return closestValue(root.left, closest, value);
+//         }
+//         else if(root.data < value){
+//             return closestValue(root.right, closest, value);
+//         }else{
+//             return root;
+//         }
+//     }
+
+//     public static void main(String args[]){
+//         Node root = new Node(8);         //      8                                        
+//         root.left = new Node(5);         //     / \                                        
+//         root.left.left = new Node(3);    //    5   11                                            
+//         root.left.right = new Node(6);   //   / \    \                                            
+//         root.right = new Node(11);       //  3   6    20                                        
+//         root.right.right = new Node(20);  
+
+//         System.out.print(closestValue(root, root, 16).data);
+//     }
+// }
+
+// public class jav{
+//     static class Student implements Comparable<Student> {
+//         String name;
+//         int rank;
+//         public Student(String name, int rank){
+//             this.name = name;
+//             this.rank = rank;
+//         }
+
+//         @Override
+//         public int compareTo(Student s2){
+//             return this.rank - s2.rank;
+//         }
+//     }
+//     public static void main(String args[]){
+//         PriorityQueue<Student> pq = new PriorityQueue<>(Comparator.reverseOrder());
+
+//         pq.add(new Student("A", 4));
+//         pq.add(new Student("B", 3));
+//         pq.add(new Student("C", 5));
+//         pq.add(new Student("D", 1));
+
+//         while(!pq.isEmpty()){
+//             System.out.println(pq.peek().name +" -> "+ pq.peek().rank);
+//             pq.remove();
+//         }
+
+//     }
+// }
+
+// public class jav{
+//     static class Heap{
+//         ArrayList<Integer> arr = new ArrayList<>();
+
+//         public void add (int val){
+//             arr.add(val);
+//             int x = arr.size()-1;
+
+//             while(x > 0){
+//                 int par = (x - 1)/2;
+//                 if(arr.get(x) < arr.get(par)){
+//                     int temp = arr.get(x);
+//                     arr.set(x, arr.get(par));
+//                     arr.set(par, temp);
+
+//                     x = par;
+//                 }else break;
+//             }     
+//         } 
+
+//         public int peek(){
+//             return arr.get(0);
+//         }
+
+//         private void heapfy(int i){
+//             int left = 2*i + 1;
+//             int right = 2*i + 2;
+//             int minIdx = i;
+
+//             if(left < arr.size() && arr.get(minIdx) > arr.get(left)){
+//                 minIdx = left;
+//             }
+
+//             if(right < arr.size() && arr.get(minIdx) > arr.get(right)){
+//                 minIdx = right;
+//             }
+
+//             if(minIdx != i){
+//                 int temp = arr.get(i);
+//                 arr.set(i, arr.get(minIdx));
+//                 arr.set(minIdx, temp);
+
+//                 heapfy(minIdx);
+//             }
+//         }
+
+//         public int remove(){
+//             int data = arr.get(0);
+
+//             int temp = arr.get(0);
+//             arr.set(0, arr.get(arr.size() - 1));
+//             arr.set(arr.size() - 1, temp);
+
+//             arr.remove(arr.size() - 1);
+
+//             heapfy(0);
+//             return data;
+//         }
+
+//         public boolean isEmpty(){
+//             return arr.size() == 0;
+//         }
+        
+//     }
+//     public static void main(String args[]){
+//         Heap h = new Heap();
+//         h.add(3);
+//         h.add(4);
+//         h.add(1);
+//         h.add(5);
+
+//         while(!h.isEmpty()){
+//             System.out.println(h.remove());
+//         }
+//     }
+// }
+
+// public class jav{
+//     static class Point implements Comparable<Point>{
+//         int x;
+//         int y;
+//         int distsq;
+//         int index;
+//         public Point(int x, int y, int distsq, int index){
+//             this.x = x;
+//             this.y = y;
+//             this.distsq = distsq;
+//             this.index = index;
+//         }
+
+//         @Override
+//         public int compareTo(Point p2){
+//             return this.distsq - p2.distsq;
+//         }
+//     }
+//     public static void main(String args[]){
+//         int pts[][] = {{3, 3}, {5, -1}, {-2, 4}};
+//         int k = 2;
+
+//         PriorityQueue<Point> pq = new PriorityQueue<>();
+
+//         for(int i=0; i<pts.length; i++){
+//             int distsq = pts[i][0]*pts[i][0] + pts[i][1]*pts[i][1];
+//             pq.add(new Point(pts[i][0], pts[i][1], distsq, i));
+//         }
+
+//         for(int i=0; i<k; i++){
+//             System.out.println("C"+ pq.remove().index);
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int ropes[] = {2, 3, 3, 4, 6};
+
+//         PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+//         for(int i=0; i<ropes.length; i++){
+//             pq.add(ropes[i]);
+//         }
+
+//         int cost = 0;
+//         while(pq.size() > 1){
+//             int min1 = pq.remove();
+//             int min2 = pq.remove();
+
+//             cost += min1 + min2;
+//             pq.add(min1 + min2);
+//         }
+
+//         System.out.print("cost of connecting the  ropes is -> "+ cost);
+//     }
+// }
+
+// public class jav{
+//     static class Row implements Comparable<Row>{
+//         int count;
+//         int idx;
+//         public Row(int count, int idx){
+//             this.count = count;
+//             this.idx = idx;
+//         }
+
+//         @Override
+//         public int compareTo(Row r2){
+//             if(this.count == r2.count){
+//                 return this.idx - r2.idx;
+//             }else{
+//                 return this.count - r2.count;
+//             }
+//         }
+//     }
+//     public static void main(String args[]){
+//         int [][] army = {
+//             {1, 0, 0, 0},
+//             {1, 1, 1, 1},
+//             {1, 0, 0, 0},
+//             {1, 0, 0, 0}
+//         };
+
+//         int k = 2;
+
+//         PriorityQueue<Row> pq = new PriorityQueue<>();
+
+//         for(int i=0; i<army.length; i++){
+//             int count = 0;
+//             for(int j=0; j<army[0].length; j++){
+//                 count += army[i][j] == 1 ? 1 : 0;
+//             }
+//             pq.add(new Row(count, i));
+//         }
+
+//         for(int i=0; i<k; i++){
+//             System.out.println("R"+pq.remove().idx);
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int arr[] = {1, 3, -1, -3, 5, 3, 6, 7};
+//         int k = 3;
+
+//         PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> arr[b] - arr[a]);
+
+//         for(int i=0; i<arr.length; i++){
+//             while(!pq.isEmpty() && pq.peek() <= i - k){
+//                 pq.remove();
+//             }
+
+//             pq.add(i);
+
+//             if(i >= k - 1){
+//                 System.out.print(arr[pq.peek()] + " ");
+//             }
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int nums[] = {10, 20, 11, 70, 50, 40, 100, 5};
+//         int k = 3;
+
+//         PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+//         for(int num : nums){
+//             pq.add(num);
+
+//             if(pq.size() > k){
+//                 pq.poll();
+//             }
+
+//             if(pq.size() < k){
+//                 System.out.print("- ");
+//             }else{
+//                 System.out.print(pq.peek() +" ");
+//             }
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int[] arr = {2, 7};
+//         int N = 10;
+
+//         Queue<Integer> queue = new LinkedList<>();
+//         boolean filled[] = new boolean[N + 1];
+
+//         for(int num : arr){
+//             filled[num] = true;
+//             queue.add(num);
+//         }
+
+//         int time = -1;
+
+//         while(!queue.isEmpyt()){
+//             int size = queue.size();
+//             time++;
+
+//             for(int i=0; i<size; i++){
+//                 int curr = queue.poll();
+//                 //left
+//                 if(curr - 1 >= 1 && !filled(curr - 1)){
+//                     queue.add(curr -1);
+//                     filled[curr - 1] = true;
+//                 }
+//                 //right
+//                 if(curr + 1 <= N && !filled(curr + 1)){
+//                     queue.add(curr + 1);
+//                     filled[curr + 1] = true;
+//                 }
+//             }
+//         }
+//         return time;
+//     }
+// }
+
+// public class jav{
+//     static class Node implements Comparable<Node>{
+//         int row;
+//         int col;
+//         int cost;
+//         public Node (int row, int col, int cost){
+//             this.row = row;
+//             this.col = col;
+//             this.cost = cost;
+//         }
+
+//         @Override
+//         public int compareTo(Node other){
+//             return this.cost - other.cost;
+//         }
+//     }
+
+//     public static int minPathCost(int grid[][]){
+//         PriorityQueue<Node> pq = new PriorityQueue<>();
+
+//         int n = grid.length;
+//         int m = grid[0].length;
+//         int[][] dist = new int[n][m];
+
+//         for (int i = 0; i < n; i++) {
+//             Arrays.fill(dist[i], Integer.MAX_VALUE);
+//         }
+
+//         dist[0][0] = grid[0][0];
+//         pq.add(new Node(0, 0, grid[0][0]));
+
+//         int dr[] = {1, -1, 0, 0};
+//         int dc[] = {0, 0, 1, -1};
+
+//         while(!pq.isEmpty()){
+//             Node curr = pq.poll();
+//             int r = curr.row;
+//             int c = curr.col;
+//             int cost = curr.cost;
+
+//             if(r == n - 1 && c == m - 1) {
+//                 return cost;
+//             }
+
+//             for(int i=0; i<4; i++){
+//                int nr = r + dr[i];
+//                int nc = c + dc[i];
+
+//                if((nr >= 0) && (nc >= 0) && (nr < n) && (nc < m)){
+//                     int newCost = cost + grid[nr][nc];
+
+//                     if(newCost < dist[nr][nc]){
+//                         dist[nr][nc] = newCost;
+//                         pq.add(new Node(nr, nc, newCost));
+//                     }
+//                } 
+//             }
+//         }
+//         return -1;
+//     }
+
+//     public static void main(String args[]){
+//         int[][] grid = {
+//             {31, 100, 65, 12, 18},
+//             {10, 13, 47, 157, 6},
+//             {100, 113, 174, 11, 33},
+//             {88, 124, 41, 20, 140},
+//             {99, 32, 111, 41, 20}
+//         };
+
+//         System.out.println(minPathCost(grid));
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         HashMap<String, Integer> hm = new HashMap<>();
+
+//         hm.put("india", 100);
+//         hm.put("china", 150);
+//         hm.put("nepal", 10);
+//         hm.put("corona", 20);
+
+//         // System.out.println(hm);
+//         // System.out.println(hm.keySet());
+
+//         Set<String> keys = hm.keySet();
+        
+//         for(String key : keys){
+//             System.out.println(hm.get(key));
+//         }
+//     }
+// }
+//                     /\                                              /\
+                      //\\      |-----------------------------|       //\\  
+                     //\/\\ --> |IMPLIMENTATION OF THE HASHMAP|  <-- //\/\\
+                    //\/\/\\    |-----------------------------|     //\/\/\\                                                            
+// public class jav{                  
+//     static class HashMap<K, V>{                             
+//         private class Node{
+//             K key;
+//             V value;
+
+//             public Node(K key, V value){
+//                 this.key = key;
+//                 this.value = value;
+//             }
+//         }
+//         private int n; //nodes
+//         private int N; //size
+//         private LinkedList<Node> buckets[];
+
+//         @SuppressWarnings("unchecked")
+//         public HashMap(){
+//             this.N = 4;
+//             this.buckets = new LinkedList[4];
+//             for(int i=0; i<4; i++){
+//                 this.buckets[i] = new LinkedList<>();
+//             }
+//         }
+        
+//         private int hashFunction(K key){
+//             int hc = key.hashCode();
+//             return Math.abs(hc) % N;
+//         }
+
+//         private int SearchInLL(K key, int bi){
+//             LinkedList<Node> ll = buckets[bi];
+
+//             for(int i=0; i<ll.size(); i++){
+//                 Node node = ll.get(i);
+//                 if(node.key.equals(key)){
+//                     return i;
+//                 }
+//             }
+//             return -1;
+//         }
+
+//         @SuppressWarnings("unchecked")
+//         private void rehash(){
+//             LinkedList<Node> oldBuck[] = buckets;
+//             buckets = new LinkedList[2*N];
+//             N = 2*N;
+//             for(int i=0; i<buckets.length; i++){
+//                 buckets[i] = new LinkedList<>();
+//             }
+
+//             //nodes -> add in buckets
+//             for(int i=0; i<oldBuck.length; i++){
+//                 LinkedList<Node> ll = oldBuck[i];
+//                 for(Node node : ll){
+//                     put(node.key, node.value);
+//                 }
+//             }
+//         }
+
+//         public void put(K key, V value){ // o(lambda) -> o(1)
+//             int bi = hashFunction(key);  // buckets index
+//             int di = SearchInLL(key, bi);// data index 
+
+//             if(di != -1){
+//                 Node node = buckets[bi].get(di);
+//                 node.value = value;
+//             }else{
+//                 buckets[bi].add(new Node(key, value));
+//                 n++;
+//             }
+//             double lambda = (double) n/N;
+//             if(lambda > 2.0){
+//                 rehash();
+//             }
+//         }
+
+//         public boolean containsKey(K key){
+//             int bi = hashFunction(key);
+//             int di = SearchInLL(key, bi);
+
+//             if(di != -1){
+//                 return true;
+//             }else{
+//                 return false;
+//             }
+//         }
+
+//         public V get(K key){
+//             int bi = hashFunction(key);
+//             int di = SearchInLL(key, bi);
+
+//             if(di != -1){
+//                 Node node = buckets[bi].get(di);
+//                 return node.value;
+//             }else{
+//                 return null;
+//             }
+//         }
+
+//         public V remove(K key){
+//             int bi = hashFunction(key);
+//             int di = SearchInLL(key, bi);
+
+//             if(di != -1){
+//                 Node node = buckets[bi].remove(di);
+//                 n--;
+//                 return node.value;
+//             }else{
+//                 return null;
+//             }
+//         }
+
+//         public ArrayList<K> keySet(){
+//             ArrayList<K> keys = new ArrayList<>();
+
+//             for(int i=0; i<buckets.length; i++){
+//                 LinkedList<Node> ll = buckets[i];
+//                 for(Node node : ll){
+//                     keys.add(node.key);
+//                 }
+//             }
+//            return keys; 
+//         }
+
+//         public boolean isEmpty(){
+//             return n==0;
+//         }
+//     }
+//     public static void main(String args[]){
+//         HashMap<String, Integer> hm = new HashMap<>();
+//         hm.put("India", 550);
+//         hm.put("Nepal", 250);
+//         hm.put("China", 450);
+
+//         ArrayList<String> keys = hm.keySet();
+
+//         for(String key : keys){
+//             System.out.println(key);
+//         }
+//         System.out.println(hm.remove("China"));
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         HashSet<String> cities = new HashSet<>();
+//         cities.add("delhi");
+//         cities.add("Bnagkore");
+//         cities.add("noida");
+//         cities.add("mumbai");
+
+//         // Iterator it = cities.iterator(); //iterator
+//         // while(it.hasNext()){
+//         //     System.out.println(it.next());
+//         // }
+
+//         for(String str : cities){
+//             System.out.println(str);
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int arr1[] = {7, 3, 9};
+//         int arr2[] = {6, 3, 9, 2, 9, 4};
+
+//         Set<Integer> set = new HashSet<>();
+
+//         for(int num : arr1){
+//             set.add(num);
+//         }
+
+//         for(int num : arr2){
+//             set.add(num);
+//         }
+
+//         int countUnion = set.size();
+
+//         Set<Integer> set1 = new HashSet<>();
+
+//         for(int num : arr1){
+//             set1.add(num);
+//         }
+
+//         int countIntersection = 0;
+//         for(int num : arr2){
+//             if(set1.contains(num)){
+//                 countIntersection++;
+//                 set1.remove(num);
+//             }
+//         }
+//         System.out.println("Union -> " + countUnion);
+//         System.out.println("Intersection -> " + countIntersection);
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         HashMap<String, String> tickets = new HashMap<>();
+
+//         tickets.put("Chennai", "Bengaluru");
+//         tickets.put("Mumbai", "Delhi");
+//         tickets.put("Goa", "Chennai");
+//         tickets.put("Delhi", "Goa");
+
+//         HashSet<String> destination = new HashSet<>();
+
+//         for(String dest : tickets.values()){
+//             destination.add(dest);
+//         }
+
+//         String start = "";
+
+//         for(String city : tickets.keySet()){
+//             if(!destination.contains(city)){
+//                 start = city;
+//                 break;
+//             }
+//         }
+//         System.out.print(start);
+//         for(int i=0; i<tickets.size(); i++){
+//             if(tickets.containsKey(start)){
+//                 System.out.print(" -> "+tickets.get(start));
+//                 start = tickets.get(start);
+//             }
+//         }
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int[] arr = {15, -2, 2, -8, 1, 7, 10, 23};
+
+//         HashMap<Integer, Integer> map = new HashMap<>();
+//         int sum = 0;
+//         int maxLen = 0;
+
+//         for(int i=0; i<arr.length; i++){
+//             sum += arr[i];
+
+//             if(sum == 0){
+//                 maxLen = i + 1;
+//             }
+
+//             if(map.containsKey(sum)){
+//                 int len = i - map.get(sum);
+//                 maxLen = Math.max(len, maxLen);
+//             }else{
+//                 map.put(arr[i], i);
+//             }
+//         }
+//         System.out.println("Largest Subarray Length -> " + maxLen);
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int arr[] = {10, 2, -2, -20, 10};
+//         int k = -10;
+
+//         HashMap<Integer, Integer> map = new HashMap<>();
+//         map.put(0, 1);
+
+//         int sum = 0;
+//         int ans = 0;
+
+//         for(int i=0; i<arr.length; i++){
+//             sum += arr[i];
+//             if(map.containsKey((sum - k))){
+//                 ans += map.get(sum - k);
+//             }
+//             map.put(sum, map.getOrDefault(sum, 0) + 1);
+//         }
+//         System.out.print("Subarray --> " + ans);
+//     }
+// }
+
+// public class jav{
+//     public static class Node{
+//         Node children[] = new Node[26];
+//         boolean eow = false;
+
+//         public Node(){
+//             for(int i=0; i<26; i++){
+//                 children[i] = null;
+//             }
+//         }
+//     }
+
+//     public static Node root = new Node();
+
+//     public static void insert(String word){
+//         Node curr = root;
+
+//         for(int level = 0; level<word.length(); level++){
+//             int idx = word.charAt(level) - 'a';
+//             if(curr.children[idx] == null){
+//                 curr.children[idx] = new Node();
+//             }
+//             curr = curr.children[idx];
+//         }
+//         curr.eow = true;
+//     }
+
+//     public static boolean search(String word){
+//         Node curr = root;
+
+//         for(char c : word.toCharArray()){
+//             int idx = c - 'a';
+
+//             if(curr.children[idx] == null){
+//                 return false;
+//             }
+//             curr = curr.children[idx];
+//         }
+//         return curr.eow;
+//     }
+
+//     public static void main(String args[]){                         // (root)                                                                                                                                                                             
+//         String words[] = {"the", "a", "there", "their", "any"};     //  ├── t                                                                                                                                                                                                 
+//                                                                     //  │    └── h                                                                                                                                   
+//         for(int i = 0; i < words.length; i++) {                     //  │         └── e   (the)                                                                                                                                                                                 
+//             insert(words[i]);                                       //  │              |                                                                                                                                                                 
+//         }                                                           //  │              ├── r → e  (there)                                                                                                                                            
+//                                                                     //  │              └── i → r  (their)                                                                                
+//         System.out.println(search("the"));                          //  ├── a   (a)                                                                                                                                                                             
+//         System.out.println(search("any"));                          //  │    └── n                                                                                                                                                                             
+//         System.out.println(search("anyboy"));                       //  │         └── y  (any)                                                                                                                                                                                 
+//     }                                                                                                                                                                                                 
+// }
+
+// public class jav{
+
+//     static class Node{
+//         Node children[] = new Node[26];
+//         boolean eow = false;
+
+//         public Node(){
+//             for(int i=0; i<26; i++){
+//                 children[i] = null;
+//             }
+//         }
+//     }
+
+//     public static Node root = new Node();
+
+//     public static void insert(String word){
+//         Node curr = root;
+
+//         for(int i=0; i<word.length(); i++){
+//             int idx = word.charAt(i) - 'a';
+
+//             if(curr.children[idx] == null){
+//                 curr.children[idx] = new Node();
+//             }
+//             curr = curr.children[idx];
+//         }
+//         curr.eow = true;
+//     }
+
+//     public static boolean search(String key){
+//         Node curr = root;
+//         for(int i=0; i<key.length(); i++){
+//             int idx = key.charAt(i) - 'a';
+//             if(curr.children[idx] == null){
+//                 return false;
+//             }
+//             curr = curr.children[idx];
+//         }
+//         return curr.eow;
+//     }
+
+//     public static boolean wordBreak(String key){
+//         if(key.length() == 0) return true;
+
+//         for(int i=1; i<=key.length(); i++){
+//             if(search(key.substring(0, i)) && wordBreak(key.substring(i))){
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+
+//     public static void main(String args[]){                               // (root)                                                                                                                                                                                                       
+//         String arr[] = {"i", "like", "sam", "samsung", "mobile", "ice"};  //  ├── i                                                                                                                                                                                                                                   
+//                                                                           //  │    ├── (i)                                                                                                                                                           
+//         for (int i = 0; i < arr.length; i++) {                            //  │    └── c → e     (ice)                                                                                                                                                                                                           
+//             insert(arr[i]);                                               //  │                                                                                                                                                                                       
+//         }                                                                 //  ├── l → i → k → e  (like)                                                                                                                                                                       
+//                                                                           //  │                                                                                                                                                           
+//         String key = "ilikesamsung";                                      //  ├── s → a → m      (sam)                                                                                                                                                                                               
+//                                                                           //  │           └── s → u → n → g  (samsung)                                                                                                                                                           
+//         System.out.println(wordBreak(key));                               //  │                                                                                                                                                                                                       
+//     }                                                                     //  └── m → o → b → i → l → e      (mobile)                                                                                                                                                                   
+// }
+
+// public class jav{
+
+//     static class Node{
+//         Node children[] = new Node[26];
+//         boolean eow = false;
+//         int freq;
+
+//         public Node(){
+//             for(int i=0; i<26; i++){
+//                 children[i] = null;
+//             }
+//             freq = 1;
+//         }
+//     }
+
+//     public static Node root = new Node();
+
+//     public static void insert(String word){
+//         Node curr = root;
+
+//         for(int i=0; i<word.length(); i++){
+//             int idx = word.charAt(i) - 'a';
+
+//             if(curr.children[idx] == null){
+//                 curr.children[idx] = new Node();
+//             }else{
+//                 curr.children[idx].freq++;
+//             }
+//             curr = curr.children[idx];
+//         }
+//         curr.eow = true;
+//     }
+
+//     public static void findPrefix(Node root, String ans){
+//         if(root == null) return;
+
+//         if(root.freq == 1){
+//             System.out.println(ans);
+//             return;
+//         }
+
+//         for(int i=0; i<root.children.length; i++){
+
+//             if(root.children[i] != null){
+//                 findPrefix(root.children[i], ans+(char)(i+'a'));
+//             }
+//         }
+//     }
+
+//     public static void main(String args[]){               // (root)                                                                                                                                                                           
+//                                                           //  ├── z → e → b → r → a        (zebra)                                                                                                                                 
+//         String arr[] = {"zebra", "dog", "duck", "dove"};  //  │                                                                                                                                                                                       
+//                                                           //  └── d                                                                                                                               
+//         for (int i = 0; i < arr.length; i++) {            //       ├── o                                                                                                                                                                               
+//             insert(arr[i]);                               //       │    ├── g              (dog)                                                                                                                                                           
+//         }                                                 //       │    └── v → e          (dove)                                                                                                                                           
+//         root.freq = -1;                                   //       │                                                                                                                                                       
+//         findPrefix(root, "");                             //       └── u → c → k           (duck)                                                                                                                                                               
+//     }                                                                                                                                                                                            
+// }
+
+// public class jav{
+//     static class Node{
+//         Node children[] = new Node[26];
+//         boolean eow = false;
+
+//         public Node(){
+//             for(int i=0; i<children.length; i++){
+//                 children[i] = null;
+//             }
+//         }
+//     }
+
+//     public static Node root = new Node();
+
+//     public static void insert(String word){
+//         Node curr = root;
+
+//         for(int i=0; i<word.length(); i++){
+//             int idx = word.charAt(i) - 'a';
+
+//             if(curr.children[idx] == null){
+//                 curr.children[idx] = new Node();
+//             }
+//             curr = curr.children[idx];
+//         }
+//         curr.eow = true;
+//     }
+
+//     public static boolean startsWith(String prefix){
+//         Node curr = root;
+
+//         for(int i=0; i<prefix.length(); i++){
+//             int idx = prefix.charAt(i) - 'a';
+
+//             if(curr.children[idx] == null){
+//                 return false;
+//             }
+//             curr = curr.children[idx];
+//         }
+//         return true;
+//     }
+
+//     public static int countNodes(Node root){
+//         if(root == null){
+//             return 0;
+//         }
+
+//         int count = 0;
+//         for(int i=0; i<root.children.length; i++){
+//             if(root.children[i] != null){
+//                 count += countNodes(root.children[i]);
+//             }
+//         }
+//         return count + 1;
+//     }
+
+//     public static String ans = "";
+
+//     public static void longestWord(Node root, StringBuilder temp){
+//         if(root == null){
+//             return;
+//         }
+
+//         for(int i=0; i<root.children.length; i++){
+//             if(root.children[i] != null && root.children[i].eow == true){
+//                 char ch = (char)(i + 'a');
+//                 temp.append(ch);
+
+//                 if(temp.length() > ans.length()){
+//                     ans = temp.toString();
+//                 }
+//                 longestWord(root.children[i], temp);
+//                 temp.deleteCharAt(temp.length()-1);
+//             }
+//         }
+//     }
+
+//     public static void main(String args[]){                            // (root)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+//         // String words[] = {"apple", "app", "mango", "man", "woman"}; //  ├── a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+//                                                                        //  │    └── p                                                                                                                                                                                                                                                                                            
+//         // String prefix1 = "app";                                     //  │         └── p  (app)                                                                                                                                                                                                                                                                                                                                                                                            
+//         // String prefix2 = "moon";                                    //  │              └── l                                                                                                                                                                                                                                                                                                                                                                                            
+//                                                                        //  │                   └── e  (apple)                                                                                                                                                                                                                                                                                                                                                                                
+//         // for (int i = 0; i < words.length; i++) {                    //  │                                                                                                                                                                                                                                                                                                                                                                                                            
+//         //     insert(words[i]);                                       //  ├── m                                                                                                                                                                                                                                                                                                                                                                                        
+//         // }                                                           //  │    └── a                                                                                                                                                                                                                                                                                                                                                                    
+//         // System.out.println(startsWith(prefix1));                    //  │         └── n  (man)                                                                                                                                                                                                                                                                                                                                                                                                            
+//                                                                        //  │              └── g                                                                                                                                                                                                                                                                                                                                                                                
+//         // String str = "apple";                                       //  │                   └── o  (mango)                                                                                                                                                                                                                                                                                                                                                                                        
+//                                                                        //  │                                                                                                                                                                                                                                                                                                                                                                                
+//         // for(int i = 0; i < str.length(); i++) {                     //  └── w                                                                                                                                                                                                                                                                                                                                                                                
+//         //     String suffix = str.substring(i);                       //       └── o                                                                                                                                                                                                                                                                                                                                                                            
+//         //     insert(suffix);                                         //            └── m                                                                                                                                     
+//         // }                                                           //                 └── a                                                                                                                                                                                     
+//                                                                        //                      └── n  (woman)                                                                                                                                                                         
+//         // System.out.println(countNodes(root));                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                    
+//         String words[] = {"a", "banana", "app", "appl", "ap", "apply", "apple"};
+
+//         for(int i=0; i<words.length; i++) {
+//             insert(words[i]);
+//         }
+
+//         longestWord(root, new StringBuilder(""));
+//         System.out.println(ans);
+//     }
+// }
+
+// public class jav{
+//     public static void main(String args[]){
+//         int n = 4;
+//         int size = 2 * n-1;
+//         for(int i=0; i<size; i++){
+//             for(int j=0; j<size; j++){
+//                 int min = Math.min(Math.min(i, j), Math.min((size - 1 - i), size - 1 -j));
+//                 int value = n - min;
+//                 System.out.print(value+" ");
+//             }
+//             System.out.println();
+//         }
+//     }
+// }
+
+// public class jav{
+//     static class Edge{// Adjancency List \\
+//         int src;
+//         int dest;
+//         int wt;
+
+//         public Edge(int s, int d, int w){
+//             this.src = s;
+//             this.dest = d;
+//             this.wt = w;
+//         }
+//     }
+
+//     public static void main(String args[]){
+//         int V = 5;
+//         ArrayList<Edge>[] graph = new ArrayList[V];
+
+//         for(int i=0; i<graph.length; i++){
+//             graph[i] = new ArrayList<>();
+//         }
+
+//         // 0-vertex
+//         graph[0].add(new Edge(0, 1, 5));       //       (5)                        
+//         // 1-vertex                            //   0 ------- 1                                            
+//         graph[1].add(new Edge(1, 0, 5));       //            / \                        
+//         graph[1].add(new Edge(1, 2, 1));       //        (1)/   \(3)                        
+//         graph[1].add(new Edge(1, 2, 3));       //          /     \                        
+//         // 2-vertex                            //         2 ----- 3                                
+//         graph[2].add(new Edge(2, 1, 1));       //          \ (1)                        
+//         graph[2].add(new Edge(2, 3, 1));       //           \                        
+//         graph[2].add(new Edge(2, 4, 4));       //           (2)                        
+//         // 3-vertex                            //            \                                
+//         graph[3].add(new Edge(3, 1, 3));       //             4                        
+//         graph[3].add(new Edge(3, 2, 1));                           
+//         // 4-vertex                                                             
+//         graph[4].add(new Edge(4, 2, 2));           
+
+//         for(int i=0; i<graph[2].size(); i++){
+//             Edge e = graph[2].get(i); // src, dest, wt
+//             System.out.println(e.dest);
+//         }             
+//     }
+// }
+
+// public class jav{
+
+//     static class Edge{
+//         int src;
+//         int dest;
+//         int wt;
+
+//         public Edge(int s, int d, int w){
+//             this.src = s;
+//             this.dest = d;
+//             this.wt = w;
+//         }
+//     }
+
+//     static void createGraph(ArrayList<Edge>[] graph) {
+
+//         for (int i = 0; i < graph.length; i++) {
+//             graph[i] = new ArrayList<>();
+//         }
+
+//         // 0 -> vertex <-
+//         graph[0].add(new Edge(0, 1, 1));   //      1 ---- 3                                                                           
+//         graph[0].add(new Edge(0, 2, 1));   //     /       | \                                                                           
+//         // 1 -> vertex <-                  //    0        |  5 ---- 6                                                       
+//         graph[1].add(new Edge(1, 0, 1));   //     \       | /                                                                           
+//         graph[1].add(new Edge(1, 3, 1));   //      2 ---- 4                                                                           
+//         // 2 -> vertex <-
+//         graph[2].add(new Edge(2, 0, 1));
+//         graph[2].add(new Edge(2, 4, 1));
+//         // 3 -> vertex <-
+//         graph[3].add(new Edge(3, 1, 1));
+//         graph[3].add(new Edge(3, 4, 1));
+//         graph[3].add(new Edge(3, 5, 1));
+//         // 4 -> vertex <-
+//         graph[4].add(new Edge(4, 2, 1));
+//         graph[4].add(new Edge(4, 3, 1));
+//         graph[4].add(new Edge(4, 5, 1));
+//         // 5 -> vertex <-
+//         graph[5].add(new Edge(5, 3, 1));
+//         graph[5].add(new Edge(5, 4, 1));
+//         graph[5].add(new Edge(5, 6, 1));
+//         // 6 -> vertex <-
+//         graph[6].add(new Edge(6, 5, 1));
+//     }
+
+//     public static void bsf(ArrayList<Edge>[] graph){ // Group A (connected)    Group B (disconnected)                                                                                       
+//         boolean vis[] = new boolean[graph.length];   //                                                                                                                    
+//         for(int i=0; i<graph.length; i++){           //      0                     3                                                                                                                
+//             if(!vis[i]){                             //     / \                   / \                                                                                                
+//                 bfsUtil(graph, vis, i);              //    1---2                 5---4                                                                                                            
+//             }                                                                                                                                                                      
+//         }                                            // output -> 0 1 2 3 4 5                                       
+//     }
+
+//     public static void bfsUtil(ArrayList<Edge>[] graph, boolean vis[], int start){
+//         Queue<Integer> q = new LinkedList<>();
+//         q.add(start);
+
+//         while(!q.isEmpty()){
+//             int curr = q.remove();
+
+//             if(!vis[curr]){
+//                 System.out.println(curr+" ");
+//                 vis[curr] = true;
+//                 for(int i=0; i<graph[curr].size(); i++){
+//                     Edge e = graph[curr].get(i);
+//                     q.add(e.dest);
+//                 }
+//             }
+//         }
+//     }
+
+//     public static void dfs(ArrayList<Edge>[] graph){ // Group A (connected)    Group B (disconnected)                                                                                                       
+//         boolean vis[] = new boolean[graph.length];   //                                                                                                                                                 
+//         for(int i=0; i<graph.length; i++){           //      0                     3                                                                                                            
+//             if(!vis[i]){                             //     / \                   / \                                                                                           
+//                 dfsUtil(graph, i, vis);              //    1---2                 5---4                                                                                                      
+//             }                                                                                                                                                       
+//         }                                            // output -> 0 1 2 3 4 5 (Depends on Order of edges in ArrayList)                                                                                  
+//     }
+
+//     public static void dfsUtil(ArrayList<Edge>[] graph, int curr, boolean vis[]){
+//         vis[curr] = true;
+//         System.out.print(curr +" ");
+
+//         for(int i=0; i<graph[curr].size(); i++){
+//             Edge e = graph[curr].get(i);
+
+//             if(!vis[e.dest]){
+//                 dfsUtil(graph, e.dest, vis);
+//             }   
+//         }
+//     }
+
+//     public static boolean hasPath(ArrayList<Edge>graph[], int src, int dest, boolean vis[]){
+//         if(src == dest){
+//             return true;
+//         }
+
+//         for(int i=0; i<graph[src].size(); i++){
+//             Edge e = graph[src].get(i);
+
+//             if(!vis[e.dest]){
+//                 vis[e.dest] = true;
+//                 if( hasPath(graph, e.dest, dest, vis)){
+//                     return true;
+//                 }
+//             }
+
+//         }
+//         return false;
+//     }
+
+//     public static void main(String args[]){
+//         int V = 7;
+//         ArrayList<Edge> graph[] = new ArrayList[V];
+
+//         createGraph(graph);
+
+//         boolean vis[] = new boolean[V];
+//         // dfs(graph, 0, vis);
+
+//         System.out.println(hasPath(graph, 0, 1, vis));
+//     }
+// }
+
+// public class jav{
+//     static class Edge{
+//         int src;
+//         int dest;
+
+//         public Edge(int s, int d){
+//             this.src = s;
+//             this.dest = d;
+//         }
+//     }
+
+//     static void createGraph(ArrayList<Edge> graph[]){
+//         for(int i=0; i<graph.length; i++){
+//             graph[i] = new ArrayList<>();
+//         }
+
+//         graph[0].add(new Edge(0, 1));
+//         graph[0].add(new Edge(0, 2));
+//         graph[0].add(new Edge(0, 3));
+
+//         graph[1].add(new Edge(1, 0));
+//         graph[1].add(new Edge(1, 2));
+
+//         graph[2].add(new Edge(2, 0));
+//         graph[2].add(new Edge(2, 1));
+
+//         graph[3].add(new Edge(3, 0));
+//         graph[3].add(new Edge(3, 4));
+
+        
+//     }
+
+//     public static void main(String args[]){
+
+//     }
+// }
+
+// public class jav{ //Prim’s Algorithm
+
+//     static class Edge implements Comparable<Edge>{
+//         int dest;
+//         int cost;
+
+//         public Edge(int d, int c){
+//             this.dest = d;
+//             this.cost = c;
+//         }
+
+//         @Override
+//         public int compareTo(Edge e2){
+//             return this.cost - e2.cost;
+//         }
+//     }
+
+//     public static int connectCities(int cities[][]){
+//         PriorityQueue<Edge> pq = new PriorityQueue<>();
+//         boolean vis[] = new boolean[cities.length];
+
+//         pq.add(new Edge(0, 0));
+//         int finalCost = 0;
+
+//         while(!pq.isEmpty()){
+//             Edge curr = pq.remove();
+
+//             if(!vis[curr.dest]){
+//                 vis[curr.dest] = true;
+//                 finalCost += curr.cost;
+
+//                 for(int i=0; i<cities[curr.dest].length; i++){
+//                     if(cities[curr.dest][i] != 0){
+//                         pq.add(new Edge(i, cities[curr.dest][i]));
+//                     }
+//                 }
+//             }
+//         }
+//         return finalCost;
+//     }
+
+//     public static void main(String args[]){
+//         int cities[][] = {
+//                          {0, 1, 2, 3, 4},
+//                          {1, 0, 5, 0, 7},
+//                          {2, 5, 0, 6, 0},
+//                          {3, 0, 6, 0, 0},
+//                          {4, 7, 0, 0, 0}
+//     };
+
+//     System.out.println(connectCities(cities));
+//     }
+// }
+
+// public class jav{
+
+//     static int n = 7;
+//     static int par[] = new int[n];
+//     static int rank[] = new int[n];
+
+//     public static void init(){
+//         for(int i=0; i<n; i++){
+//             par[i] = i;
+//         }
+//     }
+
+//     public static int find(int x){
+//         if(x == par[x]){
+//             return x;
+//         }
+//         return par[x] = find(par[x]);
+//     }
+
+//     public static void union(int a, int b){
+//         int parA = find(a);
+//         int parB = find(b);
+
+//         if(rank[parA] == rank[parB]){
+//             par[parB] = parA;
+//             rank[parA]++;
+//         }
+//         else if(rank[parA] < rank[parB]){
+//             par[parA] = parB;
+//         }else{
+//             par[parB] = parA;
+//         }
+//     }
+
+//     public static void main(String args[]){
+//         init();
+//         union(1, 3);
+//         System.out.println(find(3));
+//         union(2, 4);
+//         union(3, 6);
+//         union(1, 4);
+//         System.out.println(find(3));
+//         System.out.println(find(4));
+//         union(1, 5);
+//     }
+// }
+
+// public class jav{
+
+//     static class Edge implements Comparable<Edge>{
+//         int dest;
+//         int src;
+//         int wt;
+
+//         public Edge(int d, int s, int wt){
+//             this.dest = d;
+//             this.src = s;
+//             this.wt = wt;
+//         }
+
+//         @Override
+//         public int compareTo(Edge e2){
+//             return this.wt - e2.wt;
+//         }
+//     }
+
+//     static void createGraph(ArrayList<Edge> edges){
+//         edges.add(new Edge(0, 1, 10));
+//         edges.add(new Edge(0, 2, 15));
+//         edges.add(new Edge(0, 3, 30));
+//         edges.add(new Edge(1, 3, 40));
+//         edges.add(new Edge(2, 3, 40)); 
+//     }
+
+//     static int n = 4;
+//     static int par[] = new int[n];
+//     static int rank[] = new int[n];
+
+//     public static void init(){
+//         for(int i=0; i<n; i++){
+//             par[i] = i;
+//         }
+//     }
+
+//     public static int find(int x){
+//         if(par[x] == x){
+//             return x;
+//         }
+//         return par[x] = find(par[x]);
+//     }
+
+//     public static void union(int a, int b){
+//         int parA = find(a);
+//         int parB = find(b);
+
+//         if(rank[parA] == rank[parB]){
+//             par[parB] = parA;
+//             rank[parA]++;
+//         }
+//         else if(rank[parA] < rank[parB]){
+//             par[parA] = parB;
+//         }else{
+//             par[parB] = parA;
+//         }
+//     }
+
+//     public static void KruskalsMST(ArrayList<Edge> edges, int V){
+//         init();
+//         Collections.sort(edges);
+//         int mstCost = 0;
+//         int count = 0;
+
+//         for(int i=0; count<V-1; i++){
+//             Edge e = edges.get(i);
+//             int parA = find(e.src);
+//             int parB = find(e.dest);
+
+//             if(parA != parB){
+//                 union(e.src, e.dest);
+//                 mstCost += e.wt;
+//                 count++;
+//             }
+//         }
+//         System.out.println(mstCost);
+//     }
+
+//     public static void main(String args[]){
+//         int V = 4;
+//         ArrayList<Edge> edges = new ArrayList<>();
+//         createGraph(edges);
+//         KruskalsMST(edges, V);
+//     }
+// }
+
+public class jav{
+
+    public static int[][] colorFill(int image[][], int sr, int sc, int color){
+        int orignal = image[sr][sc];
+
+        if(orignal == color) return image;
+
+        int m = image.length;
+        int n = image[0].length;
+
+        Queue<int[]> q = new LinkedList<>();
+        q.add(new int[]{sr, sc});
+        image[sr][sc] = color;
+
+        int dir[][] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
+        while(!q.isEmpty()){
+            int[] curr = q.poll();
+
+            for(int[] d : dir){
+                int r = curr[0] + d[0];
+                int c = curr[1] + d[1];
+
+                if(r>=0 && c>=0 && r<m && c<n && image[r][c]==orignal){
+                    image[r][c] = color;
+                    q.add(new int[]{r,c});
+                }
+            }
+        } 
+        return image;
+    }
+
+    public static void main(String args[]){
+        int[][] image = {
+                        {1,1,1},
+                        {1,1,0},
+                        {1,0,1}
+                        };
+        int arr[][] = colorFill(image, 1, 1, 2);
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[0].length; j++){
+                System.out.print(arr[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
