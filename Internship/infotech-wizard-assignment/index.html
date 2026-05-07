@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Compliance Website</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">  
+  
+</head>
+
+<body>
+
+   <div class="nav-container">
+    <header class="navbar container">
+ 
+      <!-- Logo -->
+ 
+      <div class="logo">
+ 
+        <!-- Logo Image Here -->
+ 
+        <div class="logo-image">
+          <img src="Assets/Logo.png" alt="">
+        </div>
+      </div>
+
+      <!-- Navigation -->
+
+      <nav>
+        <ul class="nav-links">
+ 
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+ 
+        </ul>
+      </nav>
+ 
+      <!-- Button -->
+ 
+      <button class="contact-btn">
+ 
+        <span class="phone-icon">
+          <img src="Assets/Contact-icon.png" alt="">
+        </span>
+ 
+        <span class="btn-con">Contact Us</span>
+ 
+      </button>
+ 
+      <!-- HAMBURGER (mobile only) -->
+ 
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <img src="Assets/Menu.png" alt="">
+      </button>
+ 
+    </header>
+  </div>
+ 
+ 
+  <!-- MOBILE DRAWER OVERLAY -->
+ 
+  <div class="mobile-nav-overlay" id="navOverlay"></div>
+ 
+  <!-- MOBILE DRAWER PANEL -->
+ 
+  <div class="mobile-nav" id="mobileNav">
+ 
+    <div class="mobile-nav-header">
+ 
+      <div class="logo">
+        <div class="logo-image">
+          <img src="Assets/Logo.png" alt="">
+        </div>
+      </div>
+ 
+      <button class="mobile-nav-close" id="closeNavBtn" aria-label="Close menu">&#x2715;</button>
+ 
+    </div>
+ 
+    <ul class="mobile-nav-links">
+ 
+      <li class="active"><a href="#"><span class="nav-icon"><img src="Assets/Home.png" alt=""></span> Home</a></li>
+      <li><a href="#"><span class="nav-icon"><img src="Assets/AboutUs.png" alt=""></span> About Us</a></li>
+      <li><a href="#"><span class="nav-icon"><img src="Assets/Our Services.png" alt=""></span> Our Services</a></li>
+      <li><a href="#"><span class="nav-icon"><img src="Assets/Pricing.png" alt=""></span> Pricing</a></li>
+      <li><a href="#"><span class="nav-icon"><img src="Assets/FAQ.png" alt=""></span> FAQ</a></li>
+      <li><a href="#"><span class="nav-icon"><img src="Assets/Contact.png" alt=""></span> Contact</a></li>
+ 
+    </ul>
+    
+    <button class="mobile-contact-btn">Contact Us</button>
+ 
+  </div>
+ 
+  <!-- HERO SECTION -->
+ 
+  <section class="hero-section container">
+ 
+    <div class="hero-content">
+ 
+      <!-- <div class="top-arrow"></div> -->
+ 
+      <h1>
+ 
+        Simplifying
+ 
+        <div class="flex">
+          <span>Compliance</span>
+          <span><img src="Assets/underline-Vector.png" alt=""></span>
+        </div>
+ 
+        For Research Analysts
+ 
+      </h1>
+ 
+      <p>
+ 
+        Stay Focused On Your Insights—We'll Handle The Compliance.
+        Our Expert Solutions Ensure Your Research Practices Meet Every
+        Regulatory Requirement With Confidence And Ease
+ 
+      </p>
+ 
+      <!-- Feature List -->
+ 
+      <div class="feature-list">
+ 
+        <div class="feature-item">
+ 
+          <!-- Check Icon -->
+ 
+          <div class="check-icon"><img src="Assets/check-sign.png" alt=""></div>
+ 
+          <span>End-To-End Compliance Support</span>
+ 
+        </div>
+ 
+        <div class="feature-item">
+ 
+          <!-- Check Icon -->
+ 
+          <div class="check-icon"><img src="Assets/check-sign.png" alt=""></div>
+ 
+          <span>Regulatory Filings Made Simple</span>
+ 
+        </div>
+ 
+        <div class="feature-item">
+ 
+          <!-- Check Icon -->
+ 
+          <div class="check-icon"><img src="Assets/check-sign.png" alt=""></div>
+ 
+          <span>Tailored Solutions For Independent Analysts & Firms</span>
+ 
+        </div>
+ 
+      </div>
+ 
+      <!-- Buttons -->
+ 
+      <div class="hero-buttons">
+ 
+        <button class="primary-btn">
+ 
+          Get Started
+ 
+        </button>
+ 
+ 
+        <button class="secondary-btn">
+ 
+          Book A Consultation
+ 
+        </button>
+ 
+      </div>
+ 
+    </div>
+ 
+    <!-- RIGHT SIDE -->
+ 
+    <div class="hero-image">
+ 
+      <!-- Main Image -->
+ 
+      <div class="main-image"><img src="Assets/Banner Image.png" alt=""></div>
+ 
+    </div>
+ 
+  </section>
+ 
+  <!-- SECOND SECTION -->
+ 
+  <section class="compliance-section container1">
+    <div class="section-top">
+ 
+      <div class="section-heading">
+        <div class="">
+          <h2>
+            Why
+            <span>Compliance Matters</span>
+            <h2>For Research Analysts</h2>
+          </h2>
+        </div>
+ 
+        <div class="heading-icon">
+          <img class="spring-arrow" src="Assets/Vector2.png" alt="">
+        </div>
+ 
+      </div>
+      <div class="section-description">
+ 
+        <p>
+          In Today's Regulatory Environment, Even A Small Oversight Can Lead
+          To Penalties, Reputational Risks, And Loss Of Client Trust.
+          We Help Research Analysts And Firms Navigate Complex Compliance
+          Requirements So They Can Focus On Delivering High-Quality
+          Research Without Worry.
+        </p>
+ 
+      </div>
+    </div>
+ 
+    <!-- BOTTOM AREA -->
+ 
+    <div class="section-bottom">
+ 
+      <div class="compliance-image">
+        <img src="Assets/Section2-Image.png" alt="">
+      </div>
+ 
+      <!-- Right Cards -->
+ 
+      <div class="compliance-cards">
+ 
+        <!-- Card 1 -->
+ 
+        <div class="info-card">
+ 
+          <div class="card-row">
+ 
+            <img src="Assets/Regulatory Clarity.png" alt="">
+            <div>
+ 
+              <h3>Regulatory Clarity</h3>
+ 
+              <div class="card-content">
+                <p>
+ 
+                  We Decode Complex Compliance Rules Into Simple,
+                  Actionable Steps.
+ 
+                </p>
+              </div>
+ 
+            </div>
+ 
+          </div>
+ 
+        </div>
+
+        <!-- Card 2 -->
+ 
+        <div class="info-card">
+          <!-- Card Icon -->
+ 
+          <div class="card-row">
+            <img src="Assets/Hassle-Free Filings Clarity.png" alt="">
+            <div>
+ 
+              <h3>Hassle-Free Filings Clarity</h3>
+ 
+              <div class="card-content">
+ 
+                <p>
+                  From Registration To Ongoing Reporting—
+                  We Manage It End-To-End.
+                </p>
+ 
+              </div>
+ 
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Card 3 -->
+ 
+        <div class="info-card">
+ 
+          <div class="card-row">
+ 
+            <img class="card-icon-pos" src="Assets/Risk Protection.png" alt="">
+ 
+            <div>
+ 
+              <h3>Risk Protection</h3>
+ 
+              <div class="card-content">
+                <p>
+ 
+                  Stay Ahead Of Audits, Inspections,
+                  And Compliance Gaps With Proactive Support.
+ 
+                </p>
+ 
+              </div>
+ 
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </section>
+ 
+  <div>
+    <img src="Assets/Vector1.png" alt="">
+  </div>
+
+    <script src="sricpt.js"></script>
+
+</body>
+</html>
