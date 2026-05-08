@@ -208,6 +208,7 @@ body{
   flex-direction: column;
   gap: 1.125rem;
   margin-bottom: 2.4rem;
+  align-items: start;
 }
 
 .feature-item{
