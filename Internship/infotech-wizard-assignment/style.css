@@ -699,6 +699,12 @@ body{
   background-color: #1a2685;
 }
 
+.mobile-contact-btn:active{
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border: 0.125rem solid var(--primary-color);
+}
+
 
 /* =========================
    RESPONSIVE DESIGN
