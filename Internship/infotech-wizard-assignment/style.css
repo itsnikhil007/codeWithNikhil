@@ -715,6 +715,12 @@ body{
     display: none;
   }
 
+  .heading-icon img{
+    height: 7rem;
+    margin-top: 250px;
+    display: block;
+  }
+
   .contact-btn{
     display: none;
   }
